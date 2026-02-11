@@ -1,0 +1,17 @@
+# Virtual Environment
+.venv/
+venv/
+env/
+
+# Secrets
+.env
+
+# Chroma Database (Don't push your local vector storage)
+chroma_db/
+
+# Python Cache
+__pycache__/
+*.py[cod]
+
+# Streamlit logs/config
+.streamlit/

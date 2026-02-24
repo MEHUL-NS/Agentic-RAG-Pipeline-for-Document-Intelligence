@@ -1,4 +1,3 @@
-cat << 'EOF' > README_CLEAN.txt
 Autonomous Multi-Modal RAG ReAct Pipeline
 
 Overview
@@ -64,4 +63,4 @@ User Prompt: Find the profit margin on page 4 of the PDF and compare it to the c
 - Thought: I should calculate the difference.
 - Action: Math_Tool("18 - 12") Result: 6%
 - Final Response: The internal profit margin is 18%, which is 6% higher than the current market average of 12%.
-EOF
+

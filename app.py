@@ -15,7 +15,7 @@ with st.sidebar:
             with st.spinner("Indexing PDF..."):
                 files = {"file": uploaded_file.getvalue()}
                 # Sending the file to your FastAPI backend
-                response = requests.post("http://127.0.0.1:8000/ingest", files={"file": (uploaded_file.name, uploaded_file.getvalue())})
+                response = requests.post("http://backend:8000/ingest", files={"file": (uploaded_file.name, uploaded_file.getvalue())})
                 if response.status_code == 200:
                     st.success("Document Indexed Successfully!")
                 else:
@@ -44,7 +44,7 @@ if prompt := st.chat_input("Ask about ROI, market data, or calculations..."):
         with st.spinner("Thinking..."):
             try:
                 response = requests.post(
-                    "http://127.0.0.1:8000/query", 
+                    "http://backend:8000/query", 
                     json={"question": prompt}
                 )
                 if response.status_code == 200:
@@ -54,4 +54,5 @@ if prompt := st.chat_input("Ask about ROI, market data, or calculations..."):
                 else:
                     st.error("The agent encountered an error.")
             except Exception as e:
+
                 st.error(f"Connection failed: {e}")

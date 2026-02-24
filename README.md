@@ -6,7 +6,7 @@ Overview: A high-performance Retrieval-Augmented Generation (RAG) system designe
  - Scalable Backend: Designed with a modular structure ready for migration to FastAPI microservices.
  - Exportable Insights: Built-in reporting tool to download analysis logs for business stakeholders.
 
-## How It Works (The "Fractal" Engineering Focus)
+## How It Works 
  - Ingestion: PDF loading via PyPDFLoader.
  - Chunking: Splitting documents into 1000-character segments with overlap to preserve context.
  - Retrieval: Hybrid-ready search using GoogleGenerativeAIEmbeddings.
@@ -23,7 +23,7 @@ Overview: A high-performance Retrieval-Augmented Generation (RAG) system designe
  ## Installation & Setup
 1. Clone the Repository:
    ```bash
-   git clone [https://github.com/YOUR_USERNAME/Agentic-RAG-Pipeline-for-Document-Intelligence.git](https://github.com/YOUR_USERNAME/Agentic-RAG-Pipeline-for-Document-Intelligence.git)
+   git clone [https://github.com/MEHUL-NS/Agentic-RAG-Pipeline-for-Document-Intelligence.git](https://github.com/YOUR_USERNAME/Agentic-RAG-Pipeline-for-Document-Intelligence.git)
    cd Agentic-RAG-Pipeline-for-Document-Intelligence
    
 2. Create a Virtual Environment

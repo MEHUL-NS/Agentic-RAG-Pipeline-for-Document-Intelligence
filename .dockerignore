@@ -1,0 +1,11 @@
+# Ignore local environment files
+.env
+venv/
+.git/
+
+# Ignore local database folders
+chroma_db/
+
+# Ignore local OS junk
+__pycache__/
+.DS_Store

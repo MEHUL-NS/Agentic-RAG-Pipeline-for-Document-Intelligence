@@ -1,7 +1,21 @@
+# Web Server
+fastapi
+uvicorn
+python-multipart
+pydantic
+python-dotenv
+aiofiles
+google-search-results
 streamlit
+request 
+w
+# AI Framework & Google Integration
 langchain
 langchain-community
 langchain-google-genai
-langchain-chroma
+google-ai-generativelanguage
+
+# Document Processing & Vector Store
 pypdf
-python-dotenv
+pdfplumber
+chromadb

@@ -1,45 +1,82 @@
-Overview: A high-performance Retrieval-Augmented Generation (RAG) system designed to transform unstructured PDF data into actionable insights using LangChain and Google Gemini.
+Autonomous Multi-Modal RAG ReAct Pipeline
+A production-grade Agentic Intelligence system that transforms unstructured data into validated business insights. This pipeline leverages a Reasoning + Acting (ReAct) framework to autonomously decide when to search internal documents, browse the live web, or perform precise mathematical calculations.
 
-## Key Features:
- - Advanced RAG Architecture: Utilizes Recursive Character Text Splitting and ChromaDB vector embeddings for high-precision context retrieval.
- - Contextual Awareness: Implemented session-state management to maintain chat history, ensuring "transparency and alignment" in multi-turn conversations.
- - Scalable Backend: Designed with a modular structure ready for migration to FastAPI microservices.
- - Exportable Insights: Built-in reporting tool to download analysis logs for business stakeholders.
+Key Architectural Pillars
+Autonomous ReAct Logic
+Unlike standard RAG, this system uses a Reasoning Loop. The Agent analyzes the user's intent and dynamically selects the best tool for the job:
 
-## How It Works 
- - Ingestion: PDF loading via PyPDFLoader.
- - Chunking: Splitting documents into 1000-character segments with overlap to preserve context.
- - Retrieval: Hybrid-ready search using GoogleGenerativeAIEmbeddings.
- - Generation: Response synthesis using a ChatPromptTemplate for expert-level assistant persona.
+Internal PDF Search: Semantic retrieval from uploaded documents.
 
-## Tech Stack
- - LLM Orchestration:LangChain (Chains, Prompt Templates, Memory)
- - Generative Model: Google Gemini (Gemini-1.5-Flash-Lite)
- - Vector Store: ChromaDB (Vector Embeddings & Similarity Search)
- - Embeddings: Google Generative AI Embeddings
- - Frontend/UI: Streamlit
- - Environment & Tools: Python, Dotenv, PyPDF
+Web Search (SerpApi): Real-time market data and competitor grounding.
 
- ## Installation & Setup
-1. Clone the Repository:
-   ```bash
-   git clone [https://github.com/MEHUL-NS/Agentic-RAG-Pipeline-for-Document-Intelligence.git](https://github.com/YOUR_USERNAME/Agentic-RAG-Pipeline-for-Document-Intelligence.git)
-   cd Agentic-RAG-Pipeline-for-Document-Intelligence
-   
-2. Create a Virtual Environment
-   python -m venv venv
-   source venv/bin/activate  # On Windows: venv\Scripts\activate
+Table Extractor (pdfplumber): Precise grid-data extraction from PDF rows and columns.
 
-3. Install Dependencies:
-   pip install -r requirements.txt
+Math Tool: A logic-gate for verified financial calculations like ROI or CAGR.
 
-4. Environmental Configurations:
-   GOOGLE_API_KEY=your_actual_key_here
+Multi-Modal Data Ingestion
 
-5. Run the Application:
-   streamlit run app.py
+Unstructured Text: Recursive character splitting for semantic context.
 
+Structured Tables: Dedicated parsing to prevent the flattening of numerical data.
 
+Real-time Data: Live web-scraping bridge for up-to-the-minute accuracy.
 
+Enterprise-Ready Stack
 
+Backend: FastAPI microservice architecture with asynchronous endpoints.
 
+Containerization: Fully Dockerized (Compose) for consistent deployment.
+
+Vector Engine: ChromaDB for high-dimensional embedding storage.
+
+Tech Stack
+Orchestration: LangChain (AgentExecuter, ReAct)
+
+Brain (LLM): Google Gemini 3 Flash (2026 Stable)
+
+Embeddings: Google text-embedding-004
+
+Vector Store: ChromaDB
+
+API Layer: FastAPI
+
+Frontend: Streamlit
+
+Parsing: pdfplumber & PyPDF
+
+Live Search: SerpApi (Google Search Engine)
+
+Installation and Setup
+Clone and Configure
+git clone https://github.com/MEHUL-NS/Agentic-RAG-Pipeline-for-Document-Intelligence.git
+cd Agentic-RAG-Pipeline-for-Document-Intelligence
+
+Environment Variables
+Create a .env file with your API keys:
+GOOGLE_API_KEY=your_gemini_key
+SERPAPI_API_KEY=your_serpapi_key
+
+Run via Docker (Recommended)
+This launches both the FastAPI backend and Streamlit frontend in a networked environment.
+docker-compose up --build
+
+Manual Setup (Alternative)
+Terminal 1 (Backend): uvicorn main:app --reload
+Terminal 2 (Frontend): streamlit run app.py
+
+Example Agentic Workflow
+User Prompt: Find the profit margin on page 4 of the PDF and compare it to the current market average for AI startups.
+
+Thought: I need to find the profit margin in the document first.
+
+Action: Table_Tool(page="4") Result: 18%.
+
+Thought: Now I need the current market average from the web.
+
+Action: Web_Search("average profit margin AI startups 2026") Result: 12%.
+
+Thought: I should calculate the difference.
+
+Action: Math_Tool("18 - 12") Result: 6%.
+
+Final Response: The internal profit margin is 18%, which is 6% higher than the current market average of 12%.

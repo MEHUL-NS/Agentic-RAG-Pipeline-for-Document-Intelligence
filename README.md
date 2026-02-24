@@ -43,6 +43,3 @@ Overview: A high-performance Retrieval-Augmented Generation (RAG) system designe
 
 
 
-   
-   git clone [https://github.com/YOUR_USERNAME/Agentic-RAG-Pipeline-for-Document-Intelligence.git](https://github.com/YOUR_USERNAME/Agentic-RAG-Pipeline-for-Document-Intelligence.git)
-   cd Agentic-RAG-Pipeline-for-Document-Intelligence
